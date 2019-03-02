@@ -1,5 +1,6 @@
 import os
 import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -16,7 +17,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 't(#=lcp3*uyz@%qwn8pn9csq_ub*cw
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.mysterious-forest-90220.herokuapp.com',
+                ]
 
 
 # Application definition
@@ -128,3 +130,5 @@ DATABASES['default'].update(db_from_env)
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
