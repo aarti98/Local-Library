@@ -17,8 +17,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 't(#=lcp3*uyz@%qwn8pn9csq_ub*cw
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['www.mysterious-forest-90220.herokuapp.com',
-                ]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -35,7 +34,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
